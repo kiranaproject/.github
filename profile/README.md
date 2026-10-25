@@ -17,12 +17,13 @@ graph TD
     subgraph Floria["🌸 The Floria Project Family (Foundations & Toolkit)"]
         FloriaLib["florialib<br/><b>Foundations & W3C CSS Engine</b><br/><i>Cascading parser, properties & tokens</i>"]
         Ft["floria-toolkit (Ft / libft)<br/><b>Native GUI Toolkit</b><br/><i>GPU/AggPas dual renderer & C ABI</i>"]
-        FtPas["ftpas<br/><b>Free Pascal OOP Bindings</b><br/><i>LCL-style classes & widget wrappers</i>"]
-        FloriaJS["floriajs<br/><b>JavaScript VM & FTML</b><br/><i>Bytecode interpreter & reactive UI</i>"]
+        FloriaJS["floriajs<br/><b>JavaScript VM & FTML</b><br/><i>Bytecode VM & QML-like declarative UI</i>"]
+        FtPas["ftpas<br/><b>Free Pascal OOP Bindings</b><br/><i>LCL-style classes & FTML UI loading</i>"]
 
         FloriaLib --> Ft
+        FloriaLib --> FloriaJS
         Ft --> FtPas
-        Ft --> FloriaJS
+        FloriaJS --> FtPas
     end
 
     subgraph Samarinda["🏙️ The Samarinda DE Project Family (Desktop Environment)"]
@@ -63,14 +64,15 @@ A lightweight, high-performance native GUI toolkit engineered with Free Pascal, 
 ### 3. [`ftpas`](https://github.com/kiranaproject/ftpas) — Floria Toolkit Object Pascal (FPC) OOP Bindings
 The idiomatic, strongly-typed Object-Oriented Pascal wrapper around `libft.so`.
 - **Familiar Pascal Semantics**: Brings standard Lazarus LCL / Delphi-like development patterns to Floria. Windows subclass `TFtWindow`, and child controls are declared cleanly with event callbacks (`OnClick`, `OnChange`).
+- **Declarative FTML UI (LFM Replacement / QML-like)**: Directly integrates with `floriajs`'s FTML engine to define and load declarative UI layouts. It functions as a modern replacement for legacy Lazarus Form (`.lfm`) files, mimicking the expressive declarative paradigm of Qt's QML backed by compiled Free Pascal logic.
 - **Modular Unit Structure**: Fine-grained unit imports (`ftpas.window`, `ftpas.controls`, `ftpas.layouts`, `ftpas.views`, `ftpas.creative`, `ftpas.gpu`) or single-unit convenience (`uses ftpas;`).
 - **Dynamic Library Management**: Transparently loads and links symbols from `libft.so` via `dynlibs`.
 
 ### 4. [`floriajs`](https://github.com/kiranaproject/floriajs) — JavaScript Runtime & FTML Engine
-A modern, standalone Object Pascal JavaScript engine and reactive UI runtime designed for the Floria ecosystem.
+A modern, standalone Object Pascal JavaScript engine and reactive UI runtime designed for the Floria ecosystem (depends solely on `florialib`).
 - **Bytecode Virtual Machine**: Compiles JavaScript source into bytecode via a Pratt expression parser and executes it on a fast, stack-based VM (`TFloriaJSVM`).
 - **Standard Library Support**: Built-in prototypes and objects for `Array`, `String`, `Object`, `JSON`, `Math`, `Promise`, `Map`, `Set`, `Date`, `Symbol`, `RegExp`, `URI`, and event-loop timers.
-- **FTML (Floria Toolkit Markup Language)**: Declarative component markup supporting reactive state bindings, anchors, and signals, seamlessly bridging Pascal application backends with rapid JavaScript UI scripting.
+- **FTML (Floria Toolkit Markup Language)**: Declarative UI markup engine that mimics Qt's QML and serves as a modern replacement for Lazarus `.lfm` files. Provides reactive state bindings, anchors, and signals, cleanly bridging compiled Pascal code with declarative UI definitions and dynamic JavaScript scripting.
 
 ---
 
