@@ -80,6 +80,8 @@ A modern, standalone Object Pascal JavaScript engine and reactive UI runtime des
 
 The **Samarinda Desktop Environment** is a lightweight, elegant desktop experience built exclusively for Linux on native **X11/XCB** (deliberately eschewing Wayland complexity in favor of reliable, lightweight simplicity). Powered by the Floria stack, Samarinda delivers smooth compositing, high-fidelity vector decorations, and modern window ergonomics.
 
+![Samarinda Desktop Environment](../asset/samarinda_de.jpg)
+
 ### 1. [`wmsama`](https://github.com/kiranaproject/wmsama) — Samarinda Compositing Window Manager
 A modern X11 reparenting compositing window manager written in Free Pascal, powered by `florialib`, `AggPas`, and `floria-toolkit`.
 - **Vector Window Decorations**: Subpixel anti-aliased rounded window corners with customizable corner radii rendered via the AggPas 2D vector engine.
