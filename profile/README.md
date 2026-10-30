@@ -4,7 +4,7 @@
 
 ---
 
-## 🧭 Overview & Ecosystem Architecture
+## Overview & Ecosystem Architecture
 
 The **Kirana Project** is an ambitious, ground-up desktop ecosystem engineered in modern **Object Pascal / Free Pascal (FPC)** for native Linux (strictly **X11/XCB**). 
 
@@ -14,7 +14,7 @@ The ecosystem is divided into two distinct project families:
 
 ```mermaid
 graph TD
-    subgraph Floria["🌸 The Floria Project Family (Foundations & Toolkit)"]
+    subgraph Floria["The Floria Project Family (Foundations & Toolkit)"]
         FloriaLib["florialib<br/><b>Foundations & W3C CSS Engine</b><br/><i>Cascading parser, properties & tokens</i>"]
         Ft["floria-toolkit (Ft / libft)<br/><b>Native GUI Toolkit</b><br/><i>GPU/AggPas dual renderer & C ABI</i>"]
         FloriaJS["floriajs<br/><b>JavaScript VM & FTML</b><br/><i>Bytecode VM & QML-like declarative UI</i>"]
@@ -26,7 +26,7 @@ graph TD
         FloriaJS --> FtPas
     end
 
-    subgraph Samarinda["🏙️ The Samarinda DE Project Family (Desktop Environment)"]
+    subgraph Samarinda["The Samarinda DE Project Family (Desktop Environment)"]
         Wmsama["wmsama<br/><b>Compositing Window Manager</b><br/><i>Vector borders, soft drop shadows, edge tiling</i>"]
         Shellsama["shellsama<br/><b>Desktop Shell & Panel</b><br/><i>Cutefish-inspired unified dock, launcher & status area</i>"]
 
@@ -39,7 +39,7 @@ graph TD
 
 ---
 
-## 🌸 The Floria Project Family
+## The Floria Project Family
 
 > **Why "Floria"?**  
 > The name **Floria** pays tribute to **Florian Klämpfl**, the creator and lead architect of the Free Pascal Compiler. The short moniker for the toolkit is **`Ft`** (pronounced *"Feat"*).
@@ -76,7 +76,7 @@ A modern, standalone Object Pascal JavaScript engine and reactive UI runtime des
 
 ---
 
-## 🏙️ The Samarinda DE Project Family
+## The Samarinda DE Project Family
 
 The **Samarinda Desktop Environment** is a lightweight, elegant desktop experience built exclusively for Linux on native **X11/XCB** (deliberately eschewing Wayland complexity in favor of reliable, lightweight simplicity). Powered by the Floria stack, Samarinda delivers smooth compositing, high-fidelity vector decorations, and modern window ergonomics.
 
@@ -102,7 +102,7 @@ The unified native desktop shell and dock for Samarinda DE, engineered with `ftp
 
 ---
 
-## 🛠️ Build System & Technology Stack
+## Build System & Technology Stack
 
 - **Language**: Modern Object Pascal compiled with [Free Pascal (FPC 3.2+)](https://www.freepascal.org/).
 - **Build System**: All projects are built and managed using [Pasbuild](https://github.com/graemeg/pasbuild).
